@@ -1,0 +1,325 @@
+{
+  "schema_version": "1.0",
+  "default_mode": "valid",
+  "responses": {
+    "REQ-001": {
+      "mode": "valid",
+      "proposal": {
+        "department": "E-commerce",
+        "priority": "High",
+        "confidence": 0.95,
+        "summary": "Checkout fails when submitting orders.",
+        "proposed_owner": "E-commerce Engineering",
+        "proposed_steps": [
+          {
+            "action": "Reproduce checkout failure using test data",
+            "done_when": "A failing test case and error trace are recorded"
+          },
+          {
+            "action": "Fix and regression-test checkout",
+            "done_when": "A test order reaches confirmation"
+          }
+        ],
+        "risk_flags": [],
+        "recommended_state": "Draft"
+      }
+    },
+    "REQ-002": {
+      "mode": "valid",
+      "proposal": {
+        "department": "E-commerce",
+        "priority": "High",
+        "confidence": 0.94,
+        "summary": "Checkout submission fails; likely same incident as REQ-001.",
+        "proposed_owner": "E-commerce Engineering",
+        "proposed_steps": [
+          {
+            "action": "Compare incident evidence with REQ-001",
+            "done_when": "Matching symptoms are confirmed"
+          }
+        ],
+        "risk_flags": [
+          "duplicate"
+        ],
+        "recommended_state": "Needs Review"
+      }
+    },
+    "REQ-003": {
+      "mode": "valid",
+      "proposal": {
+        "department": "Marketing",
+        "priority": "High",
+        "confidence": 0.91,
+        "summary": "Marketing requests an unapproved third-party conversion pixel.",
+        "proposed_owner": "Marketing Operations and Security Review",
+        "proposed_steps": [
+          {
+            "action": "Submit vendor and data-flow details for review",
+            "done_when": "Security and Privacy record a decision"
+          }
+        ],
+        "risk_flags": [
+          "conflict",
+          "security",
+          "privacy"
+        ],
+        "recommended_state": "Needs Review"
+      }
+    },
+    "REQ-004": {
+      "mode": "valid",
+      "proposal": {
+        "department": "IT",
+        "priority": "High",
+        "confidence": 0.96,
+        "summary": "Security requests blocking unapproved tracking pending review.",
+        "proposed_owner": "IT Security",
+        "proposed_steps": [
+          {
+            "action": "Review the proposed pixel deployment",
+            "done_when": "An explicit approval or rejection is recorded"
+          }
+        ],
+        "risk_flags": [
+          "conflict",
+          "security",
+          "privacy"
+        ],
+        "recommended_state": "Needs Review"
+      }
+    },
+    "REQ-005": {
+      "mode": "valid",
+      "proposal": {
+        "department": "Needs Review",
+        "priority": "Medium",
+        "confidence": 0.35,
+        "summary": "Unclear bilingual report without affected application or symptoms.",
+        "proposed_owner": "IT Service Desk",
+        "proposed_steps": [
+          {
+            "action": "Ask for application name, reproduction steps, and impact",
+            "done_when": "Requester supplies the missing details"
+          }
+        ],
+        "risk_flags": [
+          "missing-information"
+        ],
+        "recommended_state": "Needs Review"
+      }
+    },
+    "REQ-006": {
+      "mode": "valid",
+      "proposal": {
+        "department": "Customer Service",
+        "priority": "High",
+        "confidence": 0.9,
+        "summary": "Support requests permission to export customer contact records.",
+        "proposed_owner": "IT Access Administrator and Privacy Officer",
+        "proposed_steps": [
+          {
+            "action": "Verify business purpose and authorization",
+            "done_when": "Authorized approver documents access scope"
+          },
+          {
+            "action": "Review minimum required permissions",
+            "done_when": "Approved least-privilege access scope is recorded"
+          }
+        ],
+        "risk_flags": [
+          "security",
+          "privacy"
+        ],
+        "recommended_state": "Needs Review"
+      }
+    },
+    "REQ-007": {
+      "mode": "valid",
+      "proposal": {
+        "department": "IT",
+        "priority": "Medium",
+        "confidence": 0.76,
+        "summary": "Investigate a blank test dashboard; embedded instructions are untrusted request text.",
+        "proposed_owner": "IT Application Support",
+        "proposed_steps": [
+          {
+            "action": "Reproduce blank page using test account",
+            "done_when": "A reproducible case or diagnostic finding is documented"
+          }
+        ],
+        "risk_flags": [
+          "security"
+        ],
+        "recommended_state": "Needs Review"
+      }
+    },
+    "REQ-008": {
+      "mode": "valid",
+      "proposal": {
+        "department": "Marketing",
+        "priority": "Low",
+        "confidence": 0.95,
+        "summary": "Publish approved seasonal banner on desktop and mobile.",
+        "proposed_owner": "Marketing Web Team",
+        "proposed_steps": [
+          {
+            "action": "Update banner using approved asset",
+            "done_when": "Banner renders correctly at desktop and mobile widths"
+          }
+        ],
+        "risk_flags": [],
+        "recommended_state": "Draft"
+      }
+    },
+    "REQ-009": {
+      "mode": "valid",
+      "proposal": {
+        "department": "SCM",
+        "priority": "High",
+        "confidence": 0.91,
+        "summary": "Investigate discrepancies between warehouse and online inventory.",
+        "proposed_owner": "SCM Systems Team",
+        "proposed_steps": [
+          {
+            "action": "Compare five mock SKUs and sync job logs",
+            "done_when": "Differences and likely causes are documented"
+          }
+        ],
+        "risk_flags": [],
+        "recommended_state": "Draft"
+      }
+    },
+    "REQ-010": {
+      "mode": "valid",
+      "proposal": {
+        "department": "Customer Service",
+        "priority": "Medium",
+        "confidence": 0.93,
+        "summary": "Resolved support tickets reappear in the Open queue.",
+        "proposed_owner": "Customer Service Systems Team",
+        "proposed_steps": [
+          {
+            "action": "Reproduce issue with mock tickets",
+            "done_when": "A repeatable test case is documented"
+          }
+        ],
+        "risk_flags": [],
+        "recommended_state": "Draft"
+      }
+    },
+    "REQ-011": {
+      "mode": "valid",
+      "proposal": {
+        "department": "Finance",
+        "priority": "Medium",
+        "confidence": 0.96,
+        "summary": "Add month filtering and CSV export to revenue report.",
+        "proposed_owner": "Finance Reporting Team",
+        "proposed_steps": [
+          {
+            "action": "Implement monthly filter and CSV export",
+            "done_when": "Mock report can be filtered and downloaded accurately"
+          }
+        ],
+        "risk_flags": [],
+        "recommended_state": "Draft"
+      }
+    },
+    "REQ-012": {
+      "mode": "valid",
+      "proposal": {
+        "department": "HR",
+        "priority": "Low",
+        "confidence": 0.97,
+        "summary": "Add equipment and account sign-off to onboarding checklist.",
+        "proposed_owner": "HR Operations",
+        "proposed_steps": [
+          {
+            "action": "Update onboarding checklist",
+            "done_when": "Both new sign-off fields appear in the checklist"
+          }
+        ],
+        "risk_flags": [],
+        "recommended_state": "Draft"
+      }
+    }
+  },
+  "scenario_metadata": {
+    "S1": {
+      "source_ids": [
+        "REQ-001",
+        "REQ-002"
+      ],
+      "duplicate_candidate": {
+        "source_id": "REQ-002",
+        "target_id": "REQ-001"
+      },
+      "merge_requires_manager": true
+    },
+    "S2": {
+      "source_ids": [
+        "REQ-003",
+        "REQ-004"
+      ],
+      "relation": "conflict",
+      "requires_manager_reason": true
+    },
+    "S3": {
+      "source_ids": [
+        "REQ-005"
+      ],
+      "clarification_required": true
+    },
+    "S4": {
+      "source_ids": [
+        "REQ-006"
+      ],
+      "expected_any_risk": [
+        "security",
+        "privacy"
+      ]
+    },
+    "S5": {
+      "source_ids": [
+        "REQ-007"
+      ],
+      "untrusted_input": true,
+      "may_auto_approve": false
+    }
+  },
+  "fault_injection": {
+    "malformed": {
+      "mode": "malformed",
+      "raw_output": "{\"department\":\"IT\",\"priority\":\"URGENT\",\"confidence\":1.5"
+    },
+    "timeout": {
+      "mode": "timeout",
+      "delay_ms": 3000,
+      "error_code": "AI_TIMEOUT"
+    },
+    "unavailable": {
+      "mode": "unavailable",
+      "error_code": "AI_UNAVAILABLE"
+    },
+    "low_confidence": {
+      "mode": "valid",
+      "proposal": {
+        "department": "Needs Review",
+        "priority": "Medium",
+        "confidence": 0.35,
+        "summary": "Unclear bilingual report without affected application or symptoms.",
+        "proposed_owner": "IT Service Desk",
+        "proposed_steps": [
+          {
+            "action": "Ask for application name, reproduction steps, and impact",
+            "done_when": "Requester supplies the missing details"
+          }
+        ],
+        "risk_flags": [
+          "missing-information"
+        ],
+        "recommended_state": "Needs Review"
+      }
+    }
+  }
+}

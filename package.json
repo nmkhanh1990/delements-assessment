@@ -1,0 +1,19 @@
+{
+  "name": "delements-assessment",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "workspaces": [
+    "apps/api",
+    "apps/web"
+  ],
+  "scripts": {
+    "dev": "concurrently --kill-others --names api,web \"npm:dev --workspace @delements/api\" \"npm:dev --workspace @delements/web\"",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present"
+  },
+  "devDependencies": {
+    "concurrently": "9.2.5"
+  }
+}
